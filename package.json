@@ -1,0 +1,51 @@
+{
+  "name": "@hypernym/spinner",
+  "version": "0.1.0",
+  "author": "Hypernym Studio",
+  "description": "A tiny and super simple CLI spinner for Node.",
+  "license": "MIT",
+  "repository": "hypernym-studio/spinner",
+  "homepage": "https://github.com/hypernym-studio/spinner",
+  "funding": "https://github.com/sponsors/ivodolenc",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "node",
+    "loader",
+    "spinner",
+    "loading",
+    "terminal",
+    "typescript",
+    "process",
+    "esm"
+  ],
+  "scripts": {
+    "build": "rolli",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c .config/eslint.config.js .",
+    "lint:fix": "ESLINT_USE_FLAT_CONFIG=true eslint -c .config/eslint.config.js --fix .",
+    "format": "prettier --config .config/prettier.config.js --write .",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@hypernym/eslint-config": "^2.0.0",
+    "@hypernym/prettier-config": "^2.0.0",
+    "@hypernym/tsconfig": "^1.0.1",
+    "@types/node": "^20.7.0",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "rolli": "^0.7.0",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=v18.0.0"
+  }
+}
