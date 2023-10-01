@@ -5,5 +5,5 @@ const spinner = createSpinner()
 spinner.start()
 
 setTimeout(() => {
-  spinner.success()
+  spinner.stop()
 }, 2000)
