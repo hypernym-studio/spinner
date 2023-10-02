@@ -5,5 +5,17 @@ const spinner = createSpinner()
 spinner.start()
 
 setTimeout(() => {
-  spinner.stop()
+  spinner.update({
+    message: 'Still loading...',
+  })
+}, 1000)
+
+setTimeout(() => {
+  spinner.update({
+    message: 'Almost done...',
+  })
 }, 2000)
+
+setTimeout(() => {
+  spinner.stop()
+}, 3000)
