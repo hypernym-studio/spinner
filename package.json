@@ -2,7 +2,7 @@
   "name": "@hypernym/spinner",
   "version": "0.1.0",
   "author": "Hypernym Studio",
-  "description": "A tiny and super simple CLI spinner for Node.",
+  "description": "A tiny and super customizable CLI spinner for Node.",
   "license": "MIT",
   "repository": "hypernym-studio/spinner",
   "homepage": "https://github.com/hypernym-studio/spinner",
