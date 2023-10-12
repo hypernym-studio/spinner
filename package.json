@@ -1,6 +1,6 @@
 {
   "name": "@hypernym/spinner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Hypernym Studio",
   "description": "A tiny and super customizable CLI spinner for Node.",
   "license": "MIT",
