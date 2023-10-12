@@ -29,22 +29,22 @@
     "esm"
   ],
   "scripts": {
-    "build": "rolli",
+    "build": "hyperbundler",
     "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c .config/eslint.config.js .",
     "lint:fix": "ESLINT_USE_FLAT_CONFIG=true eslint -c .config/eslint.config.js --fix .",
     "format": "prettier --config .config/prettier.config.js --write .",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@hypernym/bundler": "^0.1.2",
     "@hypernym/eslint-config": "^2.0.1",
     "@hypernym/prettier-config": "^2.0.1",
-    "@hypernym/tsconfig": "^1.0.1",
-    "@types/node": "^20.8.0",
-    "eslint": "^8.49.0",
+    "@hypernym/tsconfig": "^1.1.0",
+    "@types/node": "^20.8.4",
+    "eslint": "^8.51.0",
     "prettier": "^3.0.3",
-    "rolli": "^0.7.0",
     "tsx": "^3.13.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=v18.0.0"
