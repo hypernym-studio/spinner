@@ -1,7 +1,3 @@
-export interface StartOptions {
-  message?: string
-}
-
 export interface UpdateOptions {
   frames?: string[]
   interval?: number
@@ -9,7 +5,7 @@ export interface UpdateOptions {
   template?: (animation?: string, message?: string) => string
 }
 
-export interface MethodOptions {
+export interface StopOptions {
   mark?: string
   message?: string
   template?: (mark?: string, message?: string) => string
@@ -33,24 +29,26 @@ export interface Options {
   /**
    * Specifies global options for the `.start()` method.
    */
-  start?: StartOptions
+  start?: UpdateOptions
   /**
    * Specifies global options for the `.stop()` method.
    */
-  stop?: MethodOptions
+  stop?: StopOptions
   /**
    * Specifies global options for the Node `exit` event.
    *
    * It's activated when the user explicitly cancels the process in the terminal (`ctrl` + `c`).
    */
-  cancel?: MethodOptions
+  cancel?: StopOptions
 }
 
 export interface Spinner {
   /**
    * Starts the spinner.
+   *
+   * Also, it can customize spinner options individually.
    */
-  start(options?: StartOptions): void
+  start(options?: UpdateOptions): void
   /**
    * Dynamically updates the spinner on the fly.
    *
@@ -61,10 +59,10 @@ export interface Spinner {
   /**
    * Stops the spinner with a custom mark and message.
    *
-   * Also, use this method as _success_, _warning_, _cancel_, _error_ or similar events,
+   * Also, this method can be used as _success_, _warning_, _cancel_, _error_ or similar events,
    * since it is very customizable.
    */
-  stop(options?: MethodOptions): void
+  stop(options?: StopOptions): void
 }
 
 // Auto-generated
