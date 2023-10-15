@@ -1,12 +1,6 @@
 import process, { stdout } from 'node:process'
 import { green, red } from './utils.js'
-import type {
-  Options,
-  Spinner,
-  StartOptions,
-  UpdateOptions,
-  MethodOptions,
-} from './types/index.js'
+import type { Options, Spinner, UpdateOptions } from './types/index.js'
 
 /**
  * Creates a tiny and super customizable CLI spinner for Node.
@@ -75,35 +69,41 @@ export function createSpinner(options: Options = {}): Spinner {
     process.exit()
   }
 
-  const spinner: Spinner = {
-    start(options?: StartOptions): void {
-      if (_intervalId) return
+  function _update(options?: UpdateOptions): void {
+    _frames = options?.frames || _frames
+    _message = options?.message || _message
+    _template = options?.template || _template
+  }
 
-      _message = options?.message || _message
+  function _clear(int?: number): void {
+    if (int) {
+      _interval = int
+      clearInterval(_intervalId)
+      _intervalId = setInterval(_render, _interval)
+    }
+  }
+
+  const spinner: Spinner = {
+    start(options) {
+      _update(options)
+
       _cursor.hide()
       _intervalId = setInterval(_render, _interval)
+
+      _clear(options?.interval)
     },
 
-    update(options?: UpdateOptions): void {
-      _frames = options?.frames || _frames
-      _message = options?.message || _message
-      _template = options?.template || _template
-
-      if (options?.interval) {
-        _interval = options.interval
-        clearInterval(_intervalId)
-        _intervalId = setInterval(_render, _interval)
-      }
+    update(options) {
+      _update(options)
+      _clear(options?.interval)
     },
 
-    stop(options?: MethodOptions): void {
-      if (!_intervalId) return
-
-      const mark = `${options?.mark || stop.mark || green('✔')} `
+    stop(options) {
+      const mark = options?.mark || stop.mark || green('✔')
       const message = options?.message || stop.message || 'Done!'
-      let line = `${mark}${message} \n`
+      let line = `${mark} ${message}\n`
 
-      if (options?.template) line = `${options.template(mark, message)} \n`
+      if (options?.template) line = `${options.template(mark, message)}\n`
 
       _cursor.show()
       clearInterval(_intervalId)
