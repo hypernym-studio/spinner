@@ -1,12 +1,22 @@
-# @hypernym/spinner
+<h1 align="center">@hypernym/spinner</h1>
 
-A tiny and super customizable CLI spinner for Node.
+<p align="center">A tiny and super customizable CLI spinner for Node.</p>
 
-<sub><a href="https://github.com/hypernym-studio/spinner">Repository</a> | <a href="https://www.npmjs.com/package/@hypernym/spinner">Package</a> | <a href="https://github.com/hypernym-studio/spinner/releases">Releases</a> | <a href="https://github.com/hypernym-studio/spinner/discussions">Discussions</a></sub>
+<p align="center">
+  <a href="https://github.com/hypernym-studio/spinner">Repository</a>
+  <span>✦</span>
+  <a href="https://www.npmjs.com/package/@hypernym/spinner">Package</a>
+  <span>✦</span>
+  <a href="https://github.com/hypernym-studio/spinner/releases">Releases</a>
+  <span>✦</span>
+  <a href="https://github.com/hypernym-studio/spinner/discussions">Discussions</a>
+</p>
 
-```sh
-npm i @hypernym/spinner
-```
+<br>
+
+<pre align="center">pnpm add @hypernym/spinner</pre>
+
+<br>
 
 ## Features
 
@@ -39,10 +49,6 @@ setTimeout(() => {
   spinner.stop()
 }, 3000)
 ```
-
-<p align="left">
-  <img alt="spinner" src=".assets/spinner.gif" />
-</p>
 
 ## Methods
 
@@ -220,12 +226,12 @@ const spinner = createSpinner({
 
 ## Community
 
-Feel free to use the official [discussions](https://github.com/hypernym-studio/spinner/discussions) for any additional questions.
+Feel free to ask questions or share new ideas.
+
+Use the official [discussions](https://github.com/hypernym-studio/spinner/discussions) to get involved.
 
 ## License
 
-Developed in 🇭🇷 Croatia
+Developed in 🇭🇷 Croatia, © Hypernym Studio.
 
 Released under the [MIT](LICENSE.txt) license.
-
-© Hypernym Studio
