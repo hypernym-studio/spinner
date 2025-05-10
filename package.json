@@ -4,13 +4,16 @@
   "author": "Hypernym Studio",
   "description": "A tiny and super customizable CLI spinner for Node.",
   "license": "MIT",
-  "repository": "hypernym-studio/spinner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypernym-studio/spinner.git"
+  },
   "homepage": "https://github.com/hypernym-studio/spinner",
   "funding": "https://github.com/sponsors/ivodolenc",
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
     }
   },
@@ -29,24 +32,21 @@
     "esm"
   ],
   "scripts": {
+    "dev": "bun playground/spinner.ts",
     "build": "hyperbundler",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c .config/eslint.config.js .",
-    "lint:fix": "ESLINT_USE_FLAT_CONFIG=true eslint -c .config/eslint.config.js --fix .",
-    "format": "prettier --config .config/prettier.config.js --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@hypernym/bundler": "^0.1.2",
-    "@hypernym/eslint-config": "^2.0.2",
-    "@hypernym/prettier-config": "^2.0.2",
-    "@hypernym/tsconfig": "^1.1.0",
-    "@types/node": "^20.8.6",
-    "eslint": "^8.51.0",
-    "prettier": "^3.0.3",
-    "tsx": "^3.13.0",
-    "typescript": "^5.2.2"
-  },
-  "engines": {
-    "node": ">=v18.0.0"
+    "@hypernym/bundler": "^0.14.3",
+    "@hypernym/eslint-config": "^3.6.1",
+    "@hypernym/prettier-config": "^3.2.4",
+    "@hypernym/tsconfig": "^2.6.1",
+    "@types/node": "^22.15.17",
+    "eslint": "^9.26.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
   }
 }
