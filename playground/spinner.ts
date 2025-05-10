@@ -1,4 +1,4 @@
-import { createSpinner } from '../src/index.js'
+import { createSpinner } from '../src'
 
 const spinner = createSpinner()
 
