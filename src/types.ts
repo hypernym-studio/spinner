@@ -65,5 +65,4 @@ export interface Spinner {
   stop(options?: StopOptions): void
 }
 
-// Auto-generated
-export * from '../index.js'
+export * from '@'

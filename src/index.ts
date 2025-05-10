@@ -1,6 +1,6 @@
 import process, { stdout } from 'node:process'
-import { green, red } from './utils.js'
-import type { Options, Spinner, UpdateOptions } from './types/index.js'
+import { green, red } from './utils'
+import type { Options, Spinner, UpdateOptions } from './types'
 
 /**
  * Creates a tiny and super customizable CLI spinner for Node.
